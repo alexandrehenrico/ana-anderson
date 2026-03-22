@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana & Anderson | 10 de Outubro de 2026</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Site de casamento de Ana & Anderson. Venha celebrar conosco esse momento especial!">
+    <meta name="keywords" content="casamento, Ana e Anderson, RSVP, lista de presentes, 10 de outubro de 2026">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/heart-favicon.ico"> <!-- Needs generating or using emoji -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+    <!-- Falling Petals Layer -->
+    <div id="petals-container" class="petals-container"></div>
+
+    <!-- Invitation Box Overlay -->
+    <div id="invitation-overlay" class="invitation-overlay">
+        <div class="invitation-box">
+            <!-- Ribbon & Seal -->
+            <div class="ribbon-horizontal"></div>
+            <div class="wax-seal" id="seal">
+                <span>A&A</span>
+            </div>
+            
+            <div class="box-content">
+                <div class="monogram">Ana & Anderson</div>
+                <h2>Você foi convidado</h2>
+                <p>Para celebrar o nosso amor</p>
+                <br>
+                <button id="open-invitation" class="btn btn-primary">Abrir Convite</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="nav-logo">A & A</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#casal">O Casal</a></li>
+                <li><a href="#padrinhos">Padrinhos</a></li>
+                <li><a href="#cerimonia">Cerimônia</a></li>
+                <li><a href="#presentes">Presentes</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Floating RSVP Button (Mobile/Desktop) -->
+    <a href="#rsvp" class="btn btn-primary btn-floating">Confirmar Presença</a>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="font-romantic">Ana <span class="heart-icon">❤</span> Anderson</h1>
+            <p class="date">10 de Outubro de 2026</p>
+            
+            <!-- Countdown -->
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Seg</span>
+                </div>
+            </div>
+
+            <a href="#rsvp" class="btn btn-primary">Confirmar Presença</a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-down">
+            <span>Role para descobrir</span>
+            <div class="arrow"></div>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="section reveal" id="intro">
+        <div class="floral-ornament top-right"></div>
+        <div class="container intro">
+            <p>Criamos esse site para compartilhar com vocês os detalhes do nosso grande dia. Estamos muito felizes e contamos com sua presença!</p>
+        </div>
+        <div class="floral-ornament bottom-left"></div>
+    </section>
+
+    <!-- O Casal -->
+    <section class="section section-alt" id="casal">
+        <div class="container">
+            <h2 class="reveal">Nossa História</h2>
+            <div class="grid casal-grid">
+                <div class="casal-images reveal">
+                    <img src="assets/B&A-157.jpg" alt="Momentos do casal 1" id="couple-main">
+                    <img src="assets/B&A-64.jpg" alt="Momentos do casal 2">
+                    <img src="assets/B&A-95.jpg" alt="Momentos do casal 3">
+                </div>
+                <div class="casal-text reveal">
+                    <h3>Como tudo começou</h3>
+                    <p>Nos conhecemos de uma forma inesperada, e desde o primeiro dia, sabíamos que algo especial estava nascendo.</p>
+                    <br>
+                    <h3>O Pedido</h3>
+                    <p>Em uma tarde ensolarada, diante do mar, Anderson fez a pergunta que mudaria nossas vidas para sempre. Foi emocionante, único e inesquecível!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Padrinhos -->
+    <section class="section" id="padrinhos">
+        <div class="container">
+            <h2 class="reveal">Nossos Padrinhos</h2>
+            <div class="grid padrinhos-grid">
+                <!-- Padrinho 1 -->
+                <div class="padrinho-card reveal">
+                    <div class="padrinho-img">
+                        <img src="assets/B&A-17.jpg" alt="Padrinho 1">
+                    </div>
+                    <h4>João Silva</h4>
+                    <p>Amigo de infância</p>
+                </div>
+                <!-- Padrinho 2 -->
+                <div class="padrinho-card reveal">
+                    <div class="padrinho-img">
+                        <img src="assets/B&A-162.jpg" alt="Padrinho 2">
+                    </div>
+                    <h4>Maria Oliveira</h4>
+                    <p>Irmã da Noiva</p>
+                </div>
+                <!-- Padrinho 3 -->
+                <div class="padrinho-card reveal">
+                    <div class="padrinho-img">
+                        <img src="assets/B&A-200.jpg" alt="Padrinho 3">
+                    </div>
+                    <h4>Pedro Santos</h4>
+                    <p>Companheiro de faculdade</p>
+                </div>
+                <!-- Padrinho 4 -->
+                <div class="padrinho-card reveal">
+                    <div class="padrinho-img">
+                        <img src="assets/B&A-206.jpg" alt="Padrinho 4">
+                    </div>
+                    <h4>Clara Mendes</h4>
+                    <p>Melhor amiga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cerimônia & Recepção -->
+    <section class="split-section" id="cerimonia">
+        <img src="assets/B&A-76.jpg" alt="Cerimônia" class="split-image reveal">
+        <div class="split-content reveal">
+            <h2>A Cerimônia</h2>
+            <div class="info-item">
+                <h4>DATA</h4>
+                <p>10 de Outubro de 2026, às 16:00</p>
+            </div>
+            <div class="info-item">
+                <h4>LOCAL</h4>
+                <p>Villa das Flores, Eventos & Garden<br>Rua Elegante, 123 - Interior/SP</p>
+            </div>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-primary">Ver no Mapa</a>
+        </div>
+    </section>
+
+    <section class="split-section reverse" id="recepcao">
+        <div class="split-content reveal">
+            <h2>A Recepção</h2>
+            <div class="info-item">
+                <h4>HORÁRIO</h4>
+                <p>A partir das 18:00</p>
+            </div>
+            <div class="info-item">
+                <h4>LOCAL</h4>
+                <p>Salão Cristal, Villa das Flores<br>O mesmo local da cerimônia</p>
+            </div>
+            <p>Prepare-se para uma noite inesquecível com muita música e alegria!</p>
+        </div>
+        <img src="assets/B&A-200.jpg" alt="Recepção" class="split-image reveal">
+    </section>
+
+    <!-- Lista de Presentes -->
+    <section class="section section-alt" id="presentes">
+        <div class="container">
+            <h2 class="reveal">Lista de Presentes</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Sua presença é o nosso maior presente! Se desejar nos presentear, selecionamos algumas opções:</p>
+            <div class="grid presentes-cards">
+                <div class="gift-card reveal">
+                    <h3>Cota Lua de Mel</h3>
+                    <p>Ajude-nos a realizar a viagem dos sonhos!</p>
+                    <br>
+                    <button class="btn btn-primary" style="background: white; color: var(--clr-text-main);">Presentear</button>
+                </div>
+                <div class="gift-card reveal">
+                    <h3>Itens para o Novo Lar</h3>
+                    <p>Utensílios e decoração para nossa casa.</p>
+                    <br>
+                    <button class="btn btn-primary" style="background: white; color: var(--clr-text-main);">Presentear</button>
+                </div>
+                <div class="gift-card reveal">
+                    <h3>Jantar Romântico</h3>
+                    <p>Para comemorarmos nossos primeiros meses.</p>
+                    <br>
+                    <button class="btn btn-primary" style="background: white; color: var(--clr-text-main);">Presentear</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+        <div class="container">
+            <h2 class="reveal">Confirmar Presença</h2>
+            <div class="rsvp-container reveal">
+                <form id="rsvp-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" class="form-control" placeholder="Seu nome" required>
+                    </div>
+                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label for="attendance">Vai ao evento?</label>
+                            <select id="attendance" class="form-control" required>
+                                <option value="">Selecione...</option>
+                                <option value="sim">Sim, com certeza!</option>
+                                <option value="nao">Não poderei ir</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="people">Nº de pessoas</label>
+                            <input type="number" id="people" class="form-control" min="1" max="10" value="1">
+                        </div>
+                    </div>
+                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="(00) 00000-0000" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="obs">Observações (opcional)</label>
+                        <textarea id="obs" class="form-control" rows="3" placeholder="Restrições alimentares, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Confirmação</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dicas -->
+    <section class="section section-alt" id="dicas">
+        <div class="container">
+            <h2 class="reveal">Dicas Importantes</h2>
+            <div class="grid presentes-cards">
+                <div class="gift-card reveal" style="background: white; color: var(--clr-text-main);">
+                    <h3 style="color: var(--clr-accent);">Hospedagem</h3>
+                    <p>Recomendamos o Hotel Plaza (2km do local) ou Pousada das Artes.</p>
+                </div>
+                <div class="gift-card reveal" style="background: white; color: var(--clr-text-main);">
+                    <h3 style="color: var(--clr-accent);">Traje</h3>
+                    <p>Esporte Fino. Sugerimos roupas leves para um evento ao entardecer.</p>
+                </div>
+                <div class="gift-card reveal" style="background: white; color: var(--clr-text-main);">
+                    <h3 style="color: var(--clr-accent);">Salão</h3>
+                    <p>Reserve horário no Salão Glow próximo ao evento: (11) 9999-9999.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mensagens -->
+    <section class="section" id="mensagens">
+        <div class="container">
+            <h2 class="reveal">Deixe seu Recado</h2>
+            <div class="rsvp-container reveal" style="margin-bottom: 50px;">
+                <form id="message-form">
+                    <div class="form-group">
+                        <label for="msg-name">Seu Nome</label>
+                        <input type="text" id="msg-name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="msg-text">Sua Mensagem</label>
+                        <textarea id="msg-text" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Recado</button>
+                </form>
+            </div>
+
+            <div id="message-list" class="grid presentes-cards">
+                <!-- Messages will appear here -->
+                <div class="gift-card reveal active" style="background: var(--clr-bg-alt); color: var(--clr-text-main); text-align: left; padding: 20px;">
+                    <h4 style="font-family: var(--font-ui); font-weight: 700; margin-bottom: 5px;">Madrinha Júlia</h4>
+                    <p style="font-size: 0.95rem;">"Que a felicidade a dois continue sendo o objetivo principal de suas vidas! Amo muito vocês."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido com carinho para o dia mais especial de Ana & Anderson.</p>
+        <p>&copy; 2026 - Casamento Ana & Anderson</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
