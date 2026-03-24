@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (openBtn) {
         openBtn.addEventListener('click', () => {
+            // Garante que o fundo da página (body) esteja no topo antes de revelar
+            window.scrollTo(0, 0);
+            
             // Stage 1: Unwrap ribbon & break seal
             invitationOverlay.classList.add('unwrapping');
             
@@ -20,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 setTimeout(() => {
                     document.body.classList.remove('loading');
-                    // Re-trigger scroll reveal for hero
-                    document.querySelector('.hero').classList.add('active');
+                    const hero = document.querySelector('.hero');
+                    if(hero) hero.classList.add('active');
                     startPetalAnimation();
                 }, 1000);
             }, 1200);
@@ -182,6 +185,32 @@ document.addEventListener('DOMContentLoaded', () => {
             toast.style.zIndex = '10000';
             document.body.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
+        });
+    }
+
+    // 6. MODAL LISTA DE PRESENTES
+    const modalLista = document.getElementById('modal-lista');
+    const btnVerLista = document.getElementById('btn-ver-lista');
+    const closeModal = document.querySelector('.close-modal');
+
+    if (btnVerLista && modalLista) {
+        btnVerLista.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalLista.classList.add('show');
+            document.body.style.overflow = 'hidden'; // impede scroll atrás do modal
+        });
+
+        closeModal.addEventListener('click', () => {
+            modalLista.classList.remove('show');
+            document.body.style.overflow = 'auto'; // restaura scroll
+        });
+
+        // Fechar ao clicar fora
+        modalLista.addEventListener('click', (e) => {
+            if (e.target === modalLista) {
+                modalLista.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
         });
     }
 });

@@ -10,7 +10,7 @@
         content="Site de casamento de Ana & Anderson. Venha celebrar conosco esse momento especial!">
     <meta name="keywords" content="casamento, Ana e Anderson, RSVP, lista de presentes, 10 de outubro de 2026">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/heart-favicon.ico"> <!-- Needs generating or using emoji -->
+    <link rel="icon" type="image/png" href="assets/Brasão.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -33,6 +33,7 @@
                 <div class="monogram"><img src="assets/Nome.png" alt="Ana & Anderson"
                         style="max-width:280px;height:auto;display:block;margin:0 auto;"></div>
                 <h2>Você foi convidado</h2>
+                <div style="height: 50px;"></div> <!-- Spacer para a fita não sobrepor -->
                 <p>Para celebrar o nosso amor</p>
                 <br>
                 <button id="open-invitation" class="btn btn-primary">Abrir Convite</button>
@@ -56,7 +57,6 @@
             </ul>
         </div>
     </nav>
-
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -93,6 +93,7 @@
             <div class="arrow"></div>
         </div>
     </section>
+
 
     <!-- Intro Section -->
     <section class="section reveal" id="intro">
@@ -170,13 +171,18 @@
             <div class="grid presentes-cards" style="grid-template-columns: 1fr; max-width: 500px; margin: 0 auto;">
                 <div class="gift-card reveal">
                     <h3>Chave PIX</h3>
-                    <p style="font-size: 1.2rem; margin: 15px 0; font-weight: bold; color: var(--clr-accent);">
-                        000.000.000-00</p> <!-- Substitua pelo PIX real -->
-                    <p>Ana ou Anderson</p>
-                    <br>
+                    <p style="font-size: 1.2rem; margin: 15px 0 5px 0; font-weight: bold; color: var(--clr-accent);">
+                        004.413.163-10
+                    </p>
+                    <p style="font-size: 0.95rem; color: var(--clr-text-sub); margin-bottom: 10px;">Chave CPF</p>
+                    <p style="margin-bottom: 20px;">
+                        <strong>Ana Beatriz Carioca Galdino</strong><br>
+                        Banco do Brasil
+                    </p>
                     <button class="btn btn-primary"
-                        onclick="navigator.clipboard.writeText('000.000.000-00'); alert('Chave Pix copiada!');"
+                        onclick="navigator.clipboard.writeText('00441316310'); alert('Chave Pix copiada para a área de transferência!');"
                         style="background: white; color: var(--clr-text-main);">Copiar Chave Pix</button>
+                    <button id="btn-ver-lista" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Ver Lista de Presentes</button>
                 </div>
             </div>
         </div>
@@ -262,6 +268,14 @@
         <p>Desenvolvido com carinho para o dia mais especial de Ana & Anderson.</p>
         <p>&copy; 2026 - Casamento Ana & Anderson</p>
     </footer>
+
+    <!-- Modal Lista de Presentes -->
+    <div id="modal-lista" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img src="assets/LISTA DE PRESENTES.png" alt="Lista de Presentes" class="lista-img">
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
