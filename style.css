@@ -53,6 +53,10 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
+    /* Previne zoom no iOS >= 10 via gesture caso o user-scalable=no falhe */
+    touch-action: pan-x pan-y;
 }
 
 body.loading {
@@ -65,6 +69,7 @@ body {
     font-family: var(--font-ui);
     line-height: 1.6;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 h1,
