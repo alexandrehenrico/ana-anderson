@@ -838,7 +838,7 @@ img {
     transform: translate(-50%, -50%);
     width: 85px;
     height: 85px;
-    background: radial-gradient(circle at 35% 35%, #9a2036, #7a1528 50%, #520b18); /* Deep elegant burgundy/rose */
+    background: radial-gradient(circle at 35% 35%, #f4b6c3, #e190a2 50%, #c66f83); /* Rosa mais claro */
     border-radius: 50%;
     z-index: 11;
     display: flex;
