@@ -185,36 +185,26 @@
                         <label for="name">Nome Completo</label>
                         <input type="text" id="name" class="form-control" placeholder="Seu nome" required>
                     </div>
-                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
-                        <div class="form-group">
-                            <label for="attendance">Vai ao evento?</label>
-                            <select id="attendance" class="form-control" required>
-                                <option value="">Selecione...</option>
-                                <option value="sim">Sim, com certeza!</option>
-                                <option value="nao">Não poderei ir</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="people">Nº de pessoas</label>
-                            <input type="number" id="people" class="form-control" min="1" max="10" value="1">
-                        </div>
-                    </div>
-                    <div class="grid" style="grid-template-columns: 1fr 1fr;">
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="(00) 00000-0000" required>
-                        </div>
-                    </div>
+
                     <div class="form-group">
-                        <label for="obs">Observações (opcional)</label>
-                        <textarea id="obs" class="form-control" rows="3"
-                            placeholder="Restrições alimentares, etc."></textarea>
+                        <label for="phone">Número do WhatsApp</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="(00) 00000-0000" required>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Confirmação</button>
+
+                    <div class="form-group">
+                        <label>Você vai ao evento?</label>
+                        <div class="attendance-options">
+                            <input type="radio" id="attendance-yes" name="attendance" value="sim" class="attendance-radio"
+                                required>
+                            <label for="attendance-yes" class="attendance-btn">Sim, irei!</label>
+
+                            <input type="radio" id="attendance-no" name="attendance" value="nao" class="attendance-radio">
+                            <label for="attendance-no" class="attendance-btn">Não poderei ir</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 25px;">Enviar
+                        Confirmação</button>
                 </form>
             </div>
         </div>

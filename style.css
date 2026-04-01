@@ -747,6 +747,52 @@ img {
     border-color: var(--clr-accent);
 }
 
+/* Attendance Toggle Buttons */
+.attendance-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.attendance-radio {
+    display: none;
+}
+
+.attendance-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    text-align: center;
+    background: var(--clr-white);
+    border: 2px solid var(--clr-border);
+    color: var(--clr-text-sub);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.attendance-btn:hover {
+    border-color: var(--clr-accent);
+    background: rgba(122, 140, 106, 0.05);
+}
+
+#attendance-yes:checked + .attendance-btn {
+    background: var(--clr-accent);
+    color: var(--clr-white);
+    border-color: var(--clr-accent);
+    box-shadow: 0 4px 15px rgba(122, 140, 106, 0.3);
+}
+
+#attendance-no:checked + .attendance-btn {
+    background: #a5a5a5;
+    color: var(--clr-white);
+    border-color: #a5a5a5;
+    box-shadow: 0 4px 15px rgba(165, 165, 165, 0.3);
+}
+
 /* Animations */
 @keyframes fadeInDown {
     from {

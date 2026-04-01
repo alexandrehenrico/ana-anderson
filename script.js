@@ -127,22 +127,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerInterval = setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 4. RSVP FORM SUBMISSION (SIMULATED)
+    // 4. RSVP FORM SUBMISSION (LOCAL STORAGE)
     const rsvpForm = document.getElementById('rsvp-form');
     if (rsvpForm) {
         rsvpForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const btn = e.target.querySelector('button');
-            const originalText = btn.innerText;
 
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const attendanceInput = e.target.querySelector('input[name="attendance"]:checked');
+            
+            if (!attendanceInput) {
+                alert("Por favor, selecione se irá ou não ao evento.");
+                return;
+            }
+            
+            const attendance = attendanceInput.value;
+
+            // Create submission object
+            const submission = {
+                name,
+                phone,
+                attendance,
+                date: new Date().toLocaleString()
+            };
+
+            // Save to localStorage (persistent in browser)
+            let rsvps = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]');
+            rsvps.push(submission);
+            localStorage.setItem('wedding_rsvps', JSON.stringify(rsvps));
+
+            const btn = e.target.querySelector('button');
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
             setTimeout(() => {
                 btn.innerText = "Confirmado! Obrigado.";
-                btn.style.backgroundColor = "#5d704d"; // Darker green
+                btn.style.backgroundColor = "var(--clr-accent)";
                 rsvpForm.reset();
-            }, 1500);
+                
+                // Success feedback toast
+                const toast = document.createElement('div');
+                toast.innerText = "Presença confirmada com sucesso!";
+                toast.style.position = 'fixed';
+                toast.style.bottom = '20px';
+                toast.style.left = '50%';
+                toast.style.transform = 'translateX(-50%)';
+                toast.style.background = 'var(--clr-accent)';
+                toast.style.color = 'white';
+                toast.style.padding = '10px 20px';
+                toast.style.borderRadius = '20px';
+                toast.style.zIndex = '10000';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 3000);
+            }, 1000);
         });
     }
 
