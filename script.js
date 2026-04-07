@@ -175,35 +175,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 date: new Date().toLocaleString()
             };
 
-            // Save to localStorage (persistent in browser)
-            let rsvps = JSON.parse(localStorage.getItem('wedding_rsvps') || '[]');
-            rsvps.push(submission);
-            localStorage.setItem('wedding_rsvps', JSON.stringify(rsvps));
-
             const btn = e.target.querySelector('button');
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
-            setTimeout(() => {
+            const finish = () => {
                 btn.innerText = "Confirmado! Obrigado.";
                 btn.style.backgroundColor = "var(--clr-accent)";
                 rsvpForm.reset();
-                
-                // Success feedback toast
                 const toast = document.createElement('div');
                 toast.innerText = "Presença confirmada com sucesso!";
-                toast.style.position = 'fixed';
-                toast.style.bottom = '20px';
-                toast.style.left = '50%';
-                toast.style.transform = 'translateX(-50%)';
-                toast.style.background = 'var(--clr-accent)';
-                toast.style.color = 'white';
-                toast.style.padding = '10px 20px';
-                toast.style.borderRadius = '20px';
-                toast.style.zIndex = '10000';
+                toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--clr-accent);color:#fff;padding:10px 20px;border-radius:20px;z-index:10000;';
                 document.body.appendChild(toast);
                 setTimeout(() => toast.remove(), 3000);
-            }, 1000);
+            };
+
+            const fail = (err) => {
+                console.error('RSVP error:', err);
+                btn.innerText = "Erro ao enviar. Tente novamente.";
+                btn.disabled = false;
+                btn.style.backgroundColor = '#c0392b';
+            };
+
+            if (!window.db) {
+                fail(new Error('Firebase não carregado'));
+                return;
+            }
+
+            db.collection('rsvps').add({
+                name,
+                phone,
+                attendance,
+                date: new Date().toLocaleString('pt-BR'),
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(finish).catch(fail);
         });
     }
 
