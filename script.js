@@ -1,7 +1,29 @@
-/* 
+/*
    ANA & ANDERSON WEDDING WEBSITE
    Modern Interactivity
 */
+
+// Carrossel auto-advance "Nossa História"
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.casal-images');
+    if (!carousel) return;
+    const imgs = carousel.querySelectorAll('img');
+    if (imgs.length < 2) return;
+    let idx = 0;
+    let paused = false;
+    const go = (i) => {
+        idx = (i + imgs.length) % imgs.length;
+        carousel.scrollTo({ left: imgs[idx].offsetLeft, behavior: 'smooth' });
+    };
+    const wrapper = carousel.parentElement;
+    const prevBtn = wrapper.querySelector('.carousel-btn.prev');
+    const nextBtn = wrapper.querySelector('.carousel-btn.next');
+    if (prevBtn) prevBtn.addEventListener('click', () => go(idx - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => go(idx + 1));
+    wrapper.addEventListener('mouseenter', () => paused = true);
+    wrapper.addEventListener('mouseleave', () => paused = false);
+    setInterval(() => { if (!paused) go(idx + 1); }, 4000);
+});
 
 document.addEventListener('DOMContentLoaded', () => {
 
